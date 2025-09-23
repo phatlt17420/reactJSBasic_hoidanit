@@ -1,5 +1,18 @@
 import logo from './logo.svg';
 import './App.scss';
+/**
+ * class component . function component (function, arrow)
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
 
 function App() {
   return (
