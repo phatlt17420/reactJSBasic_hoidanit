@@ -1,14 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
+import MyComponent from './example/MyComponent.js';
 /**
  * class component . function component (function, arrow)
- * 
- * 
- * 
- * 
- * 
- * 
- * 
  */
 
 
@@ -30,6 +24,8 @@ function App() {
         >
           Learn React
         </a>
+        <MyComponent />
+        {/* <MyComponent></MyComponent> */}
       </header>
     </div>
   );
