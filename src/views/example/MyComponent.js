@@ -1,31 +1,32 @@
 import React from "react";
 class MyComponent extends React.Component {
     state = { //state dùng để lưu giá trị tức thời
-        name: "Ronaldo",
-        channel: "HoiDanIT"
+        firstName: '',
+        lastName: ''
     }
     /* 
     JSX   
     */
-    handleOnChangeName = (event) => {
-        this.setState({
-            name: event.target.value
-        })
-
+    handleChangeFirstName = (event) => {
+        this.setState({ firstName: event.target.value })
     }
     render() {
-
-
-
         return (
             <>
-                <div className="first">
-                    <input value={this.state.name} type="text"
-                        onChange={(event) => this.handleOnChangeName(event)}
+                <div>Hello HTML FORM</div>
+                <form>
+                    <label for="fname">First name:</label><br />
+                    <input
+                        type="text"
+                        value={this.state.firstName}
+                        onChange={(event) => { this.handleChangeFirstName(event) }}
                     />
-                    Hello My Component, My name is {this.state['name']}
-                </div>
-                <div className="second">My Youtube Channel: {this.state.channel}</div>
+
+                    <br />
+                    <label for="lname">Last name:</label><br />
+                    <input type="text" value="" /><br /><br />
+                    <input type="submit" value="Submit" />
+                </form>
             </>
         )
     }
