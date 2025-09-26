@@ -15,6 +15,7 @@ function App() {
         </p>
 
         <MyComponent />
+
         {/* <MyComponent></MyComponent> */}
       </header>
     </div>
