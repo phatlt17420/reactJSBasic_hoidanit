@@ -1,60 +1,46 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import AddComponent from "./AddComponent";
 class MyComponent extends React.Component {
     state = { //state dùng để lưu giá trị tức thời
-        firstName: '',
-        lastName: ''
+
+        arrJobs: [
+            {
+                id: 'abcJob1',
+                title: 'devaloper',
+                salary: '500'
+            },
+            {
+                id: 'abcJob2',
+                title: 'tester',
+                salary: '400'
+            },
+            {
+                id: 'abcJob3',
+                title: 'Project Managers',
+                salary: '1000'
+            }
+        ]
     }
     /* 
     JSX   
     */
-    handleChangeFirstName = (event) => {
-        this.setState({
-            firstName: event.target.value
-        })
-    }
-    handleChangeLastName = (event) => {
-        this.setState({
-            lastName: event.target.value
-        })
-    }
+
     handleSubmit = (event) => {
         event.preventDefault(); // ngăn chặn tải lại website
         console.log('>>> check data input: ', this.state);
     }
     render() {
-        console.log('>>> call render: ', this.state);
+        //console.log('>>> call render: ', this.state);
         return (
             <>
+                <AddComponent />
                 <div>Hello HTML FORM</div>
-                <form>
-                    <label htmlFor="fname">First name:</label><br />
-                    <input
-                        type="text"
-                        value={this.state.firstName}
-                        onChange={(event) => { this.handleChangeFirstName(event) }}
-                    />
 
-                    <br />
-                    <label htmlFor="lname">Last name:</label><br />
-                    <input
-                        type="text"
-                        value={this.state.lastName}
-                        onChange={(event) => { this.handleChangeLastName(event) }}
-                    /><br /><br />
-                    <input
-                        type="button"
-                        value="Submit"
-                        onClick={(event) => { this.handleSubmit(event) }}
-
-
-                    />
-                </form>
                 <ChildComponent
-                    name={'Lê Tấn Phát'}
-                    age={'33'}
+                    arrJobs={this.state.arrJobs}
                 />
-// props: property
+
             </>
         )
     }
