@@ -25,7 +25,11 @@ class MyComponent extends React.Component {
     /* 
     JSX   
     */
-
+    addNewJob = (job) => {
+        this.setState({
+            arrJobs: [...this.state.arrJobs,job]
+        })
+    }
     handleSubmit = (event) => {
         event.preventDefault(); // ngăn chặn tải lại website
         console.log('>>> check data input: ', this.state);
@@ -34,7 +38,9 @@ class MyComponent extends React.Component {
         //console.log('>>> call render: ', this.state);
         return (
             <>
-                <AddComponent />
+                <AddComponent
+                    addNewJob={this.addNewJob}
+                />
                 <div>Hello HTML FORM</div>
 
                 <ChildComponent
