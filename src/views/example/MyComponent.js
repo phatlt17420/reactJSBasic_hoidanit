@@ -27,12 +27,19 @@ class MyComponent extends React.Component {
     */
     addNewJob = (job) => {
         this.setState({
-            arrJobs: [...this.state.arrJobs,job]
+            arrJobs: [...this.state.arrJobs, job]
         })
     }
     handleSubmit = (event) => {
         event.preventDefault(); // ngăn chặn tải lại website
         console.log('>>> check data input: ', this.state);
+    }
+    deleteAJob = (job) => {
+        let currentJob = this.state.arrJobs;
+        currentJob = currentJob.filter(item => item.id !== job.id)
+        this.setState({
+            arrJobs: currentJob
+        })
     }
     render() {
         //console.log('>>> call render: ', this.state);
@@ -45,6 +52,7 @@ class MyComponent extends React.Component {
 
                 <ChildComponent
                     arrJobs={this.state.arrJobs}
+                    handleOnClickDelete = {this.deleteAJob}
                 />
 
             </>
