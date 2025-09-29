@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent from './example/MyComponent.js';
+//import MyComponent from './example/MyComponent.js';
+import ListToDo from './Todos/ListToDo.js';
 /**
  * class component / function component (function, arrow)
  */
@@ -11,11 +12,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello world with React.js (Hoi Dan IT)
+          Simple toDo App
         </p>
 
-        <MyComponent />
-
+        
+        <ListToDo />
         {/* <MyComponent></MyComponent> */}
       </header>
     </div>

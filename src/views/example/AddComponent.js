@@ -1,4 +1,5 @@
 import React from "react";
+
 class AddComponent extends React.Component {
     state = {
         title: '',
@@ -51,6 +52,7 @@ class AddComponent extends React.Component {
                     <input
                         type="button"
                         value="Submit"
+                        
                         onClick={(event) => { this.handleSubmit(event) }}
 
 
