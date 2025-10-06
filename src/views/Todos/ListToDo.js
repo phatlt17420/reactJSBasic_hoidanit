@@ -1,5 +1,7 @@
 import React from "react";
 import './ListToDo.scss'
+import { toast } from 'react-toastify';
+import AddTodo from "./AddTodo";
 class ListToDo extends React.Component {
     state = {
         ListToDos: [
@@ -9,6 +11,16 @@ class ListToDo extends React.Component {
         ]
     }
 
+
+    addNewTodo = (todo) => {
+        this.setState({
+            ListToDos: [...this.state.ListToDos, todo]
+        })
+        toast.success('Đã thêm thành công!!')
+    }
+
+
+
     render() {
         let { ListToDos } = this.state;
 
@@ -16,10 +28,9 @@ class ListToDo extends React.Component {
         return (
             <>
                 <div className="list-todo-container">
-                    <div className="add-todo">
-                        <input type="text" />
-                        <button type="button">Add </button>
-                    </div>
+                    <AddTodo
+                        addNewTodo={this.addNewTodo}
+                    />
                     <div className="list-todo-content">
                         {ListToDos && ListToDos.length > 0 &&
                             ListToDos.map((item, index) => {

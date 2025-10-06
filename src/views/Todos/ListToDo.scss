@@ -1,5 +1,13 @@
 .list-todo-container {
-    .add-todo {}
+    button {
+        cursor: pointer;
+    }
+
+    .add-todo {
+        .add {
+            margin: 0 10px;
+        }
+    }
 
     .list-todo-content {
         width: 400px;
@@ -10,12 +18,18 @@
 
         .toDo-child {
             &:first-child {
+                //* nhớ ký tự & chỗ first child*//
                 border-top: 1px solid gray;
+
             }
 
             height: 40px;
             border-bottom: 1px solid gray;
             margin: 10px;
+
+            .edit {
+                margin: 0 10px;
+            }
         }
     }
 }
