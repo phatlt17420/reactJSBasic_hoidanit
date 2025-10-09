@@ -16,13 +16,10 @@ class AddTodo extends React.Component {
             alert('Missing Title')
             return;
         }
-
-
         let todo = {
             id: Math.floor(Math.random() * 10001),
             title: this.state.title
         }
-
         this.props.addNewTodo(todo);
         this.setState(
             {
