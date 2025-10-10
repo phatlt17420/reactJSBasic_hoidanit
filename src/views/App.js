@@ -9,7 +9,7 @@ import MyComponent from './example/MyComponent.js'
 import Nav from './Nav/Nav.js';
 import Home from './example/Home.js';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
-
+import ListUser from './Users/ListUser.js';
 /**
  * class component / function component (function, arrow)
  */
@@ -38,7 +38,9 @@ function App() {
             <Route path="/about">
               <MyComponent></MyComponent>
             </Route>
-
+            <Route path="/user">
+              <ListUser />
+            </Route>
 
           </Switch>
 
